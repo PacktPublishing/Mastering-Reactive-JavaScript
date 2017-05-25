@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+  </head>
+  <body>
+    <ul id="container"></ul>
+    <div id="mocha"></div>
+
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.min.js"></script>
+    <script>
+      var clickObservableFactory = function(element){
+          return Rx.Observable.fromEvent(element,'click');
+      };
+      window.observerFactory = function(){
+        return Rx.Observer.create(function(value){
+          var node = document.createElement("li");                 
+          var textnode = document.createTextNode("clicked");       
+          node.appendChild(textnode);                             
+          document.getElementById("container").appendChild(node);
+        });
+      };
+    </script>
+    <script>
+      mocha.setup('bdd');
+      var assert = chai.assert;
+      describe('Page test', function() {
+        it('should create a li element for each click', function() {
+          var observer = window.observerFactory();
+          observer.onNext();
+          observer.onNext();
+          assert.equal(2,document.getElementById('container').getElementsByTagName('li').length);
+        });
+      });
+      mocha.run();
+    </script>
+  </body>
+</html>
+
+

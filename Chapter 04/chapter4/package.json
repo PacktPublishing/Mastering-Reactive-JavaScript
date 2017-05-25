@@ -1,0 +1,14 @@
+{
+  "name": "chapter4",
+  "version": "1.0.0",
+  "description": "Examples from the chapter 4",
+  "main": "example4_1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erich Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "rx": "^4.1.0"
+  }
+}

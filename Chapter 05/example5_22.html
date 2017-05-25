@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<span id="my_span">TRIPLE CLICK</span>
+<ul id="my_ul"></ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+<script>
+    Rx.Observable
+            .fromEvent(document.getElementById("my_span"),"click")
+            .bufferWithTimeOrCount(1000,3)
+            .filter(function(arr){
+                return arr.length===3;
+            })
+            .subscribe(function(){
+                var node = document.createElement("li");
+                var textnode = document.createTextNode("TRIPLE CLICK DETECTED");
+                node.appendChild(textnode);
+                document.getElementById('my_ul').appendChild(node);
+            });
+</script>
+</body>
+</html>

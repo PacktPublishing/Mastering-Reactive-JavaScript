@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+
+<input type="text" id="my_input"/>
+
+<ul id="my_ul"></ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+
+<script>
+    Rx.Observable
+            .fromEvent(document.getElementById("my_input"),"keyup")
+            .map(function(e){return e.target.value;})
+            .debounce(200)
+            .subscribe(function(text){
+                var node = document.createElement("li");
+                var textnode=document.createTextNode("CALLING THE SERVER WITH ==> "+text);
+                node.appendChild(textnode);
+                document.getElementById('my_ul').appendChild(node);
+            });
+</script>
+</body>
+</html>

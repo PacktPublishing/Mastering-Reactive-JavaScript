@@ -1,0 +1,30 @@
+<html>
+  <head></head>
+  <body>
+                        
+    <input type="text" id="my_input"/>
+    <button id="my_button">Search</button>            
+    <span id="my_span"></span>
+                                            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+                                                    
+    <script>
+      var enterKeyUpObservable = Rx.Observable
+        .fromEvent(document.getElementById("my_input"),"keyup")
+        .filter(function(e){
+          return e.keyCode===13;
+        });
+      
+      var searchClickObservable = Rx.Observable
+        .fromEvent(document.getElementById("my_button"),"click");
+                    
+      var enterKeyUpOrSearchClickObservable = 
+              searchClickObservable.merge(enterKeyUpObservable);        
+                              
+      enterKeyUpOrSearchClickObservable.subscribe(function(){
+        var text = document.getElementById("my_input").value;
+        document.getElementById('my_span').innerHTML = "searched for ===> "+text;
+      });
+    </script>
+  </body>
+</html>

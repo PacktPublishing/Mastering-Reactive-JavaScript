@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    <script>
+      mocha.setup('bdd');
+      var assert = chai.assert;
+      describe('Math test', function() {
+        it('should return -1 when evaluating the minimum between -1 and 1', function() {
+          assert.equal(-1, Math.min(-1,1));
+        });
+        it('should return 1 when evaluating the maximum between -1 and 1', function() {
+          assert.equal(1, Math.max(-1,1));
+        });
+      });
+
+      describe('Mocha tests on browser', function() {
+        it('should have a div with id mocha', function() {
+          assert.isNotNull(document.getElementById('mocha'));
+        });
+      });
+      mocha.run();
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,142 @@
+{
+  "_args": [
+    [
+      {
+        "name": "baconjs",
+        "raw": "baconjs@0.7.88",
+        "rawSpec": "0.7.88",
+        "scope": null,
+        "spec": "0.7.88",
+        "type": "version"
+      },
+      "/Users/ericholiveira/dev/workspace/livro/examplerx/chapter1"
+    ]
+  ],
+  "_from": "baconjs@0.7.88",
+  "_id": "baconjs@0.7.88",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/baconjs",
+  "_nodeVersion": "0.12.7",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/baconjs-0.7.88.tgz_1475828576640_0.05835442990064621"
+  },
+  "_npmUser": {
+    "email": "juha.paananen@gmail.com",
+    "name": "raimohanska"
+  },
+  "_npmVersion": "2.14.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "baconjs",
+    "raw": "baconjs@0.7.88",
+    "rawSpec": "0.7.88",
+    "scope": null,
+    "spec": "0.7.88",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/baconjs/-/baconjs-0.7.88.tgz",
+  "_shasum": "88119ec488ad2df97e86ffcc7272d496e1e31611",
+  "_shrinkwrap": null,
+  "_spec": "baconjs@0.7.88",
+  "_where": "/Users/ericholiveira/dev/workspace/livro/examplerx/chapter1",
+  "author": {
+    "email": "juha.paananen@gmail.com",
+    "name": "Juha Paananen",
+    "url": "https://twitter.com/raimohanska"
+  },
+  "bugs": {
+    "url": "https://github.com/baconjs/bacon.js/issues"
+  },
+  "contributors": [
+    {
+      "email": "x.flowwolf@gmail.com",
+      "name": "Daniel K",
+      "url": "https://twitter.com/xflowwolf"
+    }
+  ],
+  "dependencies": {},
+  "description": "A small functional reactive programming lib for JavaScript.",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "benchmark": "1.0.0",
+    "bluebird": "^2",
+    "bower-json": "^0.6.0",
+    "browserify": "^11.2.0",
+    "browserstack-runner": "^0.3.8",
+    "chai": "^3.3.0",
+    "coffee-script": "^1.9.1",
+    "coffeeify": "^1.0.0",
+    "coffeelint": "^1.9.2",
+    "es6-promise": "^3.0.2",
+    "escodegen": "^1.6.1",
+    "esprima": "^2.0.0",
+    "estraverse": "^1.9.1",
+    "git-rev": "^0.2.1",
+    "github": "^0.2.4",
+    "grunt": "0.4",
+    "grunt-cli": "0.1.13",
+    "grunt-coffeelint": "0.0.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^17.2.0",
+    "grunt-shell": "^1.1.2",
+    "jasmine-node": "^1.14.5",
+    "jquery": "^2.1.4",
+    "jsstana": "^0.1.5",
+    "lodash": "^4.0.0",
+    "mocha": "^2.1.0",
+    "shelljs": "^0.5.3",
+    "sinon": "^1.12.2",
+    "uglify-js": "^2.4.16"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "88119ec488ad2df97e86ffcc7272d496e1e31611",
+    "tarball": "https://registry.npmjs.org/baconjs/-/baconjs-0.7.88.tgz"
+  },
+  "gitHead": "9baec36a774b9157457d23a6c8593c7aca65c282",
+  "homepage": "https://github.com/baconjs/bacon.js",
+  "keywords": [
+    "bacon.js",
+    "bacon",
+    "frp",
+    "functional",
+    "reactive",
+    "programming",
+    "stream",
+    "streams",
+    "EventStream",
+    "Rx",
+    "RxJs",
+    "Observable"
+  ],
+  "license": "MIT",
+  "main": "dist/Bacon.js",
+  "maintainers": [
+    {
+      "email": "juha.paananen@gmail.com",
+      "name": "raimohanska"
+    },
+    {
+      "email": "pnex2000@gmail.com",
+      "name": "pnex2000"
+    }
+  ],
+  "name": "baconjs",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baconjs/bacon.js.git"
+  },
+  "scripts": {
+    "pre-publish": "grunt",
+    "test": "./runtests"
+  },
+  "version": "0.7.88"
+}

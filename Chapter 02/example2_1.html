@@ -1,0 +1,14 @@
+<html>
+<head></head>
+<body>
+<button id="myButton">CLICK</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.88/Bacon.min.js"></script>
+<script>
+    var clickEventStream = $('#myButton').asEventStream('click');
+    clickEventStream.onValue(function(){
+        alert('Button clicked');
+    });
+</script>
+</body>
+</html>

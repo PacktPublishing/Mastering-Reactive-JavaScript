@@ -1,0 +1,27 @@
+<html>
+  <head></head>
+  <body>
+                                
+  <input type="text" id="my_input"/>
+  <button id="my_button">Search</button>            
+  <span id="my_span"></span>
+                                                                
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js"></script>
+                                                                            
+  <script>
+    var enterKeyUpObservable = Rx.Observable
+      .fromEvent(document.getElementById("my_input"),"keyup")
+      .flatMapLatest(function(e){
+        var value = document.getElementById("my_input").value;
+        return Rx.Observable
+          .just("results for: "+value)
+          .delay(Math.max((10 - value.length)*1000,100));
+      });
+      
+      enterKeyUpObservable.subscribe(function(text){
+        document.getElementById('my_span').innerHTML = text;
+      });
+    </script>
+      </body>
+</html>
+
