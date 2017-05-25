@@ -1,0 +1,25 @@
+{
+  "name": "web_chat",
+  "version": "1.0.0",
+  "description": "Web chat application",
+  "main": "src/index.js",
+  "scripts": {
+    "prestart": "npm run build-client && npm test",
+    "start": "node src/index.js",
+    "test": "mocha tests/*test.js",
+    "build-client": "browserify client/index.js -o static/bundle.js"
+  },
+  "author": "Erich Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "ioredis": "^2.5.0",
+    "rx": "^4.1.0",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "mocha": "^3.2.0"
+  }
+}

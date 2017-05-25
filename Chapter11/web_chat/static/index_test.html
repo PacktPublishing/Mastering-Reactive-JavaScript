@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+</head>
+<body>
+<div id="mocha"></div>
+<div style="display:none">
+    <ul id="messages"></ul>
+    <div class="message_container">
+        <input id="message_input"/><button id="send_message">Send message</button>
+    </div>
+</div>
+<script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+<script>
+    window.prompt=function(){
+        return "Erich";
+    };
+</script>
+<script src="/bundle.js"></script>
+<script>
+    mocha.setup('bdd');
+    var assert = chai.assert;
+    beforeEach(function(){
+        document.getElementById("message_input").value = "";
+        document.getElementById("messages").innerHTML = "";
+    });
+    describe('Web chat test', function() {
+        it('should send and receive public messages', function(done) {
+            setTimeout(function(){
+                document.getElementById("message_input").value = "hello";
+                document.getElementById("send_message").click();
+                setTimeout(function(){
+                    assert.equal(document.getElementById("messages").children.length,1);
+                    assert.equal(
+                            document.getElementById("messages").children[0].innerText,
+                            "Erich says to everybody : hello"
+                    );
+
+                    done();
+                },500);
+            },100);
+        });
+        it('should send and receive private messages', function(done) {
+            setTimeout(function(){
+                document.getElementById("message_input").value = "@Erich hello";
+                document.getElementById("send_message").click();
+                setTimeout(function(){
+                    assert.equal(document.getElementById("messages").children.length,1);
+                    assert.equal(
+                            document.getElementById("messages").children[0].innerText,
+                            "Erich says to Erich : hello"
+                    );
+                    done();
+                },500);
+            },100);
+        });
+        it('should support roll_a_dice command', function(done) {
+            setTimeout(function(){
+                document.getElementById("message_input").value = "/roll_a_dice";
+                document.getElementById("send_message").click();
+                setTimeout(function(){
+                    assert.equal(document.getElementById("messages").children.length,1);
+                    assert.equal(
+                            /server says to Erich : Result is [1-6]/.test(
+                                document.getElementById("messages").children[0].innerText
+                            ),
+                            true
+                    );
+                    done();
+                },500);
+            },100);
+        });
+        it('should support echo command', function(done) {
+            setTimeout(function(){
+                document.getElementById("message_input").value = "/echo hello";
+                document.getElementById("send_message").click();
+                setTimeout(function(){
+                    assert.equal(document.getElementById("messages").children.length,1);
+                    assert.equal(
+                            document.getElementById("messages").children[0].innerText,
+                            "server says to Erich : hello"
+                    );
+                    done();
+                },500);
+            },100);
+        });
+    });
+    mocha.run();
+</script>
+</body>
+</html>
