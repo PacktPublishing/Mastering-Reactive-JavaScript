@@ -8,7 +8,7 @@ Moving on, you’ll explore the RxJs API, be introduced to the problem of data t
 At the end of the book, you’ll get hands-on experience of using RxJs, and will create a real-time web chat using RxJs on the client and server, providing you with the complete package to master RxJs.
 
 ## Instructions and Navigation
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
+All of the code is organized into folders. For example, Chapter02.
 
 
 
